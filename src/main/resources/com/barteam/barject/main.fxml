@@ -33,13 +33,14 @@
 -->
 
 <?import javafx.geometry.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.barteam.barject.BarJectController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -93,21 +94,33 @@
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                   <Button graphicTextGap="0.0" layoutX="96.0" layoutY="259.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="95.0" style="-fx-background-color: #ffffff;" text="About" wrapText="true">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                   <Button graphicTextGap="0.0" layoutX="96.0" layoutY="336.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="95.0" style="-fx-background-color: #ffffff;" text="Support" wrapText="true">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
-                  <Button graphicTextGap="0.0" layoutX="74.0" layoutY="489.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="75.0" style="-fx-background-color: #ffffff;" text="Exit" textFill="#adadad" wrapText="true">
+                  <Button graphicTextGap="0.0" layoutX="74.0" layoutY="489.0" mnemonicParsing="false" onAction="#ButtonExit" prefHeight="43.0" prefWidth="75.0" style="-fx-background-color: #ffffff;" text="Exit" textFill="#adadad" wrapText="true">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </Button>
                   <ImageView fitHeight="87.0" fitWidth="152.0" layoutX="41.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -141,6 +154,7 @@
             <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="545.0" prefWidth="463.0">
               <children>
                 <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="Welcome back!" textAlignment="CENTER" wrapText="false" />
+                        <Label fx:id="table" layoutX="5.0" layoutY="37.0" prefHeight="502.0" prefWidth="419.0" />
               </children>
             </AnchorPane>
           </content>
@@ -152,6 +166,17 @@
                         <Image url="@../../../images/Add.png" />
                      </image>
                   </ImageView>
+                  <Button layoutX="63.0" layoutY="249.0" mnemonicParsing="false" onAction="#getTable" prefHeight="54.0" prefWidth="95.0" style="-fx-background-color: #376FFF;" text="Get" textFill="WHITE" AnchorPane.bottomAnchor="248.0" AnchorPane.leftAnchor="63.0" AnchorPane.rightAnchor="63.0" AnchorPane.topAnchor="249.0">
+                     <font>
+                        <Font name="Verdana Bold" size="16.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
                </children>
         </AnchorPane>
       </items>

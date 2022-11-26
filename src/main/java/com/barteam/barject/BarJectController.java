@@ -3,16 +3,17 @@ package com.barteam.barject;
 import com.barteam.barject.Database.DBManager;
 import com.barteam.barject.Database.QUERY_OPTION;
 import com.barteam.barject.Database.TableData;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
 
-public class HelloController {
+public class BarJectController {
     @FXML
-    private Label welcomeText;
+    private Label table;
 
     @FXML
-    protected void onHelloButtonClick() {
+    protected void getTable() {
         StringBuilder stringBuilder = new StringBuilder();
 
         try {
@@ -27,6 +28,11 @@ public class HelloController {
             System.out.println(e.getMessage());
         }
 
-        welcomeText.setText(stringBuilder.toString());
+        table.setText(stringBuilder.toString());
+    }
+    @FXML
+    protected void ButtonExit() {
+        Platform.exit();
+        System.exit(0);
     }
 }
