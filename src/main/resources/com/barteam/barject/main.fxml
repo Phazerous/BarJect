@@ -32,15 +32,29 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.barteam.barject.BarJectController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.barteam.barject.BarJectController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -149,16 +163,14 @@
                   </ImageView>
           </children>
         </AnchorPane>
-        <ScrollPane prefHeight="-1.0" prefWidth="-1.0">
-          <content>
-            <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="545.0" prefWidth="463.0">
-              <children>
-                <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="Welcome back!" textAlignment="CENTER" wrapText="false" />
-                        <Label fx:id="table" layoutX="5.0" layoutY="37.0" prefHeight="502.0" prefWidth="419.0" />
-              </children>
-            </AnchorPane>
-          </content>
-        </ScrollPane>
+      <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="545.0" prefWidth="463.0">
+        <children>
+          <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="Welcome back!" textAlignment="CENTER" wrapText="false" />
+                  <TableView id="tableView" fx:id="tableView" layoutY="97.0" prefHeight="386.0" prefWidth="452.0" />
+                  <Button id="searchButton" fx:id="searchButton" layoutX="345.0" layoutY="72.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="107.0" text="Искать" />
+                  <TextField id="searchField" fx:id="searchField" layoutY="72.0" prefHeight="25.0" prefWidth="346.0" />
+        </children>
+      </AnchorPane>
         <AnchorPane>
                <children>
                   <ImageView fitHeight="125.0" fitWidth="170.0" layoutX="34.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
@@ -166,17 +178,22 @@
                         <Image url="@../../../images/Add.png" />
                      </image>
                   </ImageView>
-                  <Button layoutX="63.0" layoutY="249.0" mnemonicParsing="false" onAction="#getTable" prefHeight="54.0" prefWidth="95.0" style="-fx-background-color: #376FFF;" text="Get" textFill="WHITE" AnchorPane.bottomAnchor="248.0" AnchorPane.leftAnchor="63.0" AnchorPane.rightAnchor="63.0" AnchorPane.topAnchor="249.0">
-                     <font>
-                        <Font name="Verdana Bold" size="16.0" />
-                     </font>
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
+                  <AnchorPane fx:id="descriptionPane" layoutX="11.0" layoutY="176.0" prefHeight="200.0" prefWidth="200.0" visible="false">
+                     <children>
+                        <Label fx:id="description" alignment="TOP_LEFT" layoutX="-1.0" layoutY="41.0" prefHeight="200.0" prefWidth="200.0" />
+                        <ToggleButton fx:id="descButton" layoutX="35.0" layoutY="2.0" mnemonicParsing="false" selected="true" text="Описание">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="toggl" />
+                           </toggleGroup>
+                        </ToggleButton>
+                        <ToggleButton fx:id="barButton" layoutX="106.0" layoutY="2.0" mnemonicParsing="false" text="Штрих-код" toggleGroup="$toggl" />
+                        <ImageView fx:id="barImage" fitHeight="125.0" fitWidth="170.0" layoutX="37.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../../../images/ApplicationLogo.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
                </children>
         </AnchorPane>
       </items>
