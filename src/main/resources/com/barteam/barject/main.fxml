@@ -40,7 +40,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.barteam.barject.BarJectController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="600.0" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.barteam.barject.BarJectController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -83,7 +83,7 @@
     </MenuBar>
     <SplitPane dividerPositions="0.2505567928730512, 0.7505567928730512" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <items>
-        <AnchorPane prefHeight="551.0" prefWidth="164.0" style="-fx-background-color: #ffffff;">
+        <AnchorPane maxWidth="-Infinity" prefHeight="551.0" style="-fx-background-color: #ffffff;">
           <children>
             <Label alignment="CENTER" layoutX="79.0" layoutY="14.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="BarJect" textAlignment="CENTER" wrapText="false">
               <font>
@@ -98,7 +98,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button graphicTextGap="0.0" layoutX="96.0" layoutY="259.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="95.0" style="-fx-background-color: #ffffff;" text="About" wrapText="true">
+                  <Button graphicTextGap="0.0" layoutX="96.0" layoutY="259.0" mnemonicParsing="false" onAction="#about" prefHeight="54.0" prefWidth="95.0" style="-fx-background-color: #ffffff;" text="About" wrapText="true">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
@@ -106,7 +106,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button graphicTextGap="0.0" layoutX="96.0" layoutY="336.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="95.0" style="-fx-background-color: #ffffff;" text="Support" wrapText="true">
+                  <Button graphicTextGap="0.0" layoutX="96.0" layoutY="336.0" mnemonicParsing="false" onAction="#support" prefHeight="54.0" prefWidth="95.0" style="-fx-background-color: #ffffff;" text="Support" wrapText="true">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
@@ -129,22 +129,22 @@
                   </ImageView>
                   <ImageView fitHeight="65.0" fitWidth="58.0" layoutX="27.0" layoutY="178.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../images/image%206.png" />
+                        <Image url="@../../../images/image_6.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="69.0" fitWidth="58.0" layoutX="28.0" layoutY="332.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../images/image%207.png" />
+                        <Image url="@../../../images/image_7.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="59.0" fitWidth="50.0" layoutX="32.0" layoutY="261.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../images/image%208.png" />
+                        <Image url="@../../../images/image_8.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="43.0" fitWidth="50.0" layoutX="35.0" layoutY="489.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../images/Mask%20group.png" />
+                        <Image url="@../../../images/Mask_group.png" />
                      </image>
                   </ImageView>
           </children>
@@ -152,7 +152,7 @@
       <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="545.0" prefWidth="463.0">
         <children>
           <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="Welcome back!" textAlignment="CENTER" wrapText="false" />
-                  <TableView id="tableView" fx:id="tableView" layoutY="97.0" prefHeight="386.0" prefWidth="452.0" />
+                  <TableView id="tableView" fx:id="tableView" layoutY="97.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="452.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0" />
                   <Button id="searchButton" fx:id="searchButton" layoutX="345.0" layoutY="72.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="107.0" text="Искать" />
                   <TextField id="searchField" fx:id="searchField" layoutY="72.0" prefHeight="25.0" prefWidth="346.0" />
         </children>
@@ -164,13 +164,13 @@
                         <Image url="@../../../images/Add.png" />
                      </image>
                   </ImageView>
-                  <AnchorPane fx:id="descriptionPane" layoutX="11.0" layoutY="176.0" prefHeight="200.0" prefWidth="200.0" visible="false">
+                  <AnchorPane fx:id="descriptionPane" layoutX="11.0" layoutY="176.0" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="176.0">
                      <children>
-                        <Label fx:id="description" alignment="TOP_LEFT" layoutX="-1.0" layoutY="41.0" prefHeight="200.0" prefWidth="200.0">
+                        <Label fx:id="description" alignment="TOP_LEFT" layoutX="-1.0" layoutY="41.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
                            <font>
-                              <Font name="Verdana" size="12.0" />
+                              <Font name="Verdana" size="16.0" />
                            </font></Label>
-                        <ToggleButton fx:id="descButton" layoutX="35.0" layoutY="2.0" mnemonicParsing="false" selected="true" text="Описание">
+                        <ToggleButton fx:id="descButton" layoutY="2.0" mnemonicParsing="false" selected="true" text="Описание">
                            <toggleGroup>
                               <ToggleGroup fx:id="toggl" />
                            </toggleGroup>
