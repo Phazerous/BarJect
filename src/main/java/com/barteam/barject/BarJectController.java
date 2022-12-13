@@ -67,6 +67,8 @@ public class BarJectController {
         TableView.TableViewSelectionModel<ObservableList<String>> a = tableView.getSelectionModel();
         a.selectedItemProperty().addListener(new ChangeListener<ObservableList<String>>(){
             public void changed(ObservableValue<? extends ObservableList<String>> val, ObservableList<String> oldVal, ObservableList<String> newVal){
+                descButton.setVisible(true);
+                barButton.setVisible(true);
                 String s = "";
                 if(newVal != null) {
                     descriptionPane.setVisible(true);
@@ -151,5 +153,19 @@ public class BarJectController {
     protected void ButtonExit() {
         Platform.exit();
         System.exit(0);
+    }
+    public void about() {
+        descButton.setVisible(false);
+        barButton.setVisible(false);
+        descriptionPane.setVisible(true);
+        description.setText("Информация о проекте\n еще что-то...");
+        description.setVisible(true);
+    }
+    public void support() {
+        descButton.setVisible(false);
+        barButton.setVisible(false);
+        descriptionPane.setVisible(true);
+        description.setText("К нам можно обратиться следующими способами\n еще что-то...");
+        description.setVisible(true);
     }
 }
