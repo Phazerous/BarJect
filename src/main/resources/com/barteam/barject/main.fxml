@@ -152,7 +152,9 @@
       <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="545.0" prefWidth="463.0">
         <children>
           <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="Welcome back!" textAlignment="CENTER" wrapText="false" />
+          
                   <TableView id="tableView" fx:id="tableView" layoutY="97.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="452.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0" />
+                  
                   <Button id="searchButton" fx:id="searchButton" layoutX="345.0" layoutY="72.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="107.0" text="Искать" />
                   <TextField id="searchField" fx:id="searchField" layoutY="72.0" prefHeight="25.0" prefWidth="346.0" />
         </children>
@@ -164,6 +166,7 @@
                         <Image url="@../../../images/Add.png" />
                      </image>
                   </ImageView>
+
                   <AnchorPane fx:id="descriptionPane" layoutX="11.0" layoutY="176.0" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="176.0">
                      <children>
                         <Label fx:id="description" alignment="TOP_LEFT" layoutX="-1.0" layoutY="41.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
@@ -171,6 +174,7 @@
                               <Font name="Verdana" size="16.0" />
                            </font></Label>
                         <ToggleButton fx:id="descButton" layoutY="2.0" mnemonicParsing="false" selected="true" text="Описание">
+
                            <toggleGroup>
                               <ToggleGroup fx:id="toggl" />
                            </toggleGroup>
