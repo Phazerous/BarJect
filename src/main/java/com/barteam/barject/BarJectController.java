@@ -11,16 +11,20 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.PixelWriter;
 import javafx.scene.image.WritableImage;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.DirectoryChooser;
+import javafx.stage.FileChooser;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.nio.file.Files;
 import java.util.Arrays;
 import java.util.List;
 
@@ -31,11 +35,16 @@ public class BarJectController {
     private DBManager dbManager;
     private List<String> columnNames;
 
+    private String barcode;
+
     @FXML
     private ToggleButton barButton;
 
     @FXML
     private ToggleButton descButton;
+
+    @FXML
+    private Button saveButton;
 
     @FXML
     private ImageView barImage;
@@ -63,12 +72,13 @@ public class BarJectController {
     void initialize() {
         generator = new EAN13Generator();
         // Additional arguments
-        generator.setImageHeight(120);
-        generator.setImageWidth(130);
+        generator.setImageHeight(300);
+        generator.setImageWidth(500);
         generator.setStartYPos(0);
         generator.setStartXPos(0);
-        generator.setDefaultGuardHeight(120);
-        generator.setDefaultLineHeight(80);
+        generator.setDefaultGuardHeight(290);
+        generator.setDefaultLineHeight(270);
+        generator.setDefaultSpaceX(5);
 
         try {
             dbManager = new DBManager("db/products.db");
@@ -87,10 +97,11 @@ public class BarJectController {
             public void changed(ObservableValue<? extends ObservableList<String>> val, ObservableList<String> oldVal, ObservableList<String> newVal){
                 descButton.setVisible(true);
                 barButton.setVisible(true);
+                saveButton.setVisible(true);
                 String s = "";
                 if(newVal != null) {
                     descriptionPane.setVisible(true);
-                    String barcode = newVal.get(0);
+                    barcode = newVal.get(0);
                     while (barcode.length() < 12) {
                         barcode = barcode + "0";
                     }
@@ -201,6 +212,7 @@ public class BarJectController {
         descButton.setVisible(false);
         barButton.setVisible(false);
         barImage.setVisible(false);
+        saveButton.setVisible(false);
         descriptionPane.setVisible(true);
         description.setText("Информация о проекте\n еще что-то...");
         description.setVisible(true);
@@ -209,8 +221,22 @@ public class BarJectController {
         descButton.setVisible(false);
         barImage.setVisible(false);
         barButton.setVisible(false);
+        saveButton.setVisible(false);
         descriptionPane.setVisible(true);
         description.setText("К нам можно обратиться следующими способами\n еще что-то...");
         description.setVisible(true);
+    }
+    public void save() {
+        FileChooser filechooser = new FileChooser();
+        filechooser.setTitle("save barcode");
+        File defaultDirectory = new File("c:/");
+        filechooser.setInitialDirectory(defaultDirectory);
+        filechooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Pictures", "*.png"));
+        File selectedFile = filechooser.showSaveDialog(null);
+        try {
+            BufferedImage image = generator.generateEAN13(barcode);
+            ImageIO.write(image, "PNG", new File(selectedFile.getAbsolutePath()));
+        }
+        catch (Exception e) {}
     }
 }

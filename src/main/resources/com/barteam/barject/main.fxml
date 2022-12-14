@@ -42,55 +42,17 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="600.0" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.barteam.barject.BarJectController">
   <children>
-    <MenuBar VBox.vgrow="NEVER">
-      <menus>
-        <Menu mnemonicParsing="false" text="File">
-          <items>
-            <MenuItem mnemonicParsing="false" text="New" />
-            <MenuItem mnemonicParsing="false" text="Open…" />
-            <Menu mnemonicParsing="false" text="Open Recent" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Close" />
-            <MenuItem mnemonicParsing="false" text="Save" />
-            <MenuItem mnemonicParsing="false" text="Save As…" />
-            <MenuItem mnemonicParsing="false" text="Revert" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Preferences…" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Quit" />
-          </items>
-        </Menu>
-        <Menu mnemonicParsing="false" text="Edit">
-          <items>
-            <MenuItem mnemonicParsing="false" text="Undo" />
-            <MenuItem mnemonicParsing="false" text="Redo" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Cut" />
-            <MenuItem mnemonicParsing="false" text="Copy" />
-            <MenuItem mnemonicParsing="false" text="Paste" />
-            <MenuItem mnemonicParsing="false" text="Delete" />
-            <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" text="Select All" />
-            <MenuItem mnemonicParsing="false" text="Unselect All" />
-          </items>
-        </Menu>
-        <Menu mnemonicParsing="false" text="Help">
-          <items>
-            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
-          </items>
-        </Menu>
-      </menus>
-    </MenuBar>
+    <MenuBar VBox.vgrow="NEVER" />
     <SplitPane dividerPositions="0.2505567928730512, 0.7505567928730512" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <items>
         <AnchorPane maxWidth="-Infinity" prefHeight="551.0" style="-fx-background-color: #ffffff;">
           <children>
-            <Label alignment="CENTER" layoutX="79.0" layoutY="14.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="BarJect" textAlignment="CENTER" wrapText="false">
+            <Label alignment="CENTER" layoutX="60.0" layoutY="14.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="BarJect" textAlignment="CENTER" wrapText="false">
               <font>
                 <Font name="Verdana Bold" size="16.0" fx:id="x1" />
               </font>
             </Label>
-                  <Button graphicTextGap="0.0" layoutX="96.0" layoutY="180.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="95.0" style="-fx-background-color: #ffffff;" text="Settings" wrapText="true">
+                  <Button id="buttonM" graphicTextGap="0.0" layoutX="96.0" layoutY="180.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="95.0" stylesheets="@../../../styles/buttonM.css" text="Settings" wrapText="true">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
@@ -98,7 +60,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button graphicTextGap="0.0" layoutX="96.0" layoutY="259.0" mnemonicParsing="false" onAction="#about" prefHeight="54.0" prefWidth="95.0" style="-fx-background-color: #ffffff;" text="About" wrapText="true">
+                  <Button id="buttonM" graphicTextGap="0.0" layoutX="96.0" layoutY="259.0" mnemonicParsing="false" onAction="#about" prefHeight="54.0" prefWidth="95.0" stylesheets="@../../../styles/buttonM.css" text="About" wrapText="true">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
@@ -106,7 +68,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button graphicTextGap="0.0" layoutX="96.0" layoutY="336.0" mnemonicParsing="false" onAction="#support" prefHeight="54.0" prefWidth="95.0" style="-fx-background-color: #ffffff;" text="Support" wrapText="true">
+                  <Button id="buttonM" graphicTextGap="0.0" layoutX="96.0" layoutY="336.0" mnemonicParsing="false" onAction="#support" prefHeight="54.0" prefWidth="95.0" stylesheets="@../../../styles/buttonM.css" text="Support" wrapText="true">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
@@ -114,7 +76,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button graphicTextGap="0.0" layoutX="74.0" layoutY="489.0" mnemonicParsing="false" onAction="#ButtonExit" prefHeight="43.0" prefWidth="75.0" style="-fx-background-color: #ffffff;" text="Exit" textFill="#adadad" wrapText="true">
+                  <Button graphicTextGap="0.0" layoutX="74.0" layoutY="489.0" mnemonicParsing="false" onAction="#ButtonExit" prefHeight="43.0" prefWidth="75.0" stylesheets="@../../../styles/buttonM.css" text="Exit" textFill="#ababab" wrapText="true">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
@@ -122,7 +84,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <ImageView fitHeight="87.0" fitWidth="152.0" layoutX="41.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="87.0" fitWidth="152.0" layoutX="20.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../images/logo.png" />
                      </image>
@@ -153,8 +115,14 @@
         <children>
           <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="Welcome back!" textAlignment="CENTER" wrapText="false" />
                   <TableView id="tableView" fx:id="tableView" layoutY="97.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="452.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0" />
-                  <Button id="searchButton" fx:id="searchButton" layoutX="345.0" layoutY="72.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="107.0" text="Искать" />
-                  <TextField id="searchField" fx:id="searchField" layoutY="72.0" prefHeight="25.0" prefWidth="346.0" />
+                  <Button id="button" fx:id="searchButton" layoutX="349.0" layoutY="70.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="107.0" stylesheets="@../../../styles/button.css" text="search">
+                     <font>
+                        <Font name="Verdana" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <TextField id="searchField" fx:id="searchField" layoutY="70.0" prefHeight="25.0" prefWidth="346.0" />
         </children>
       </AnchorPane>
         <AnchorPane>
@@ -170,12 +138,33 @@
                            <font>
                               <Font name="Verdana" size="16.0" />
                            </font></Label>
-                        <ToggleButton fx:id="descButton" layoutY="2.0" mnemonicParsing="false" selected="true" text="Описание">
+                        <TextArea layoutX="50.0" prefHeight="20.0" prefWidth="60.0" />
+                        <ToggleButton id="toggle-button" fx:id="descButton" layoutY="2.0" mnemonicParsing="false" selected="true" stylesheets="@../../../styles/togglebutton.css" text="description">
                            <toggleGroup>
                               <ToggleGroup fx:id="toggl" />
                            </toggleGroup>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font name="Verdana" size="16.0" />
+                           </font>
                         </ToggleButton>
-                        <ToggleButton fx:id="barButton" layoutX="106.0" layoutY="2.0" mnemonicParsing="false" text="Штрих-код" toggleGroup="$toggl" />
+                        <ToggleButton id="toggle-button" fx:id="barButton" layoutX="130.0" layoutY="2.0" mnemonicParsing="false" stylesheets="@../../../styles/togglebutton.css" text="barcode" toggleGroup="$toggl">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font name="Verdana" size="16.0" />
+                           </font></ToggleButton>
+                        <Button id="button" fx:id="saveButton" layoutX="37.0" layoutY="250.0" mnemonicParsing="false" onAction="#save" stylesheets="@../../../styles/button.css" text="save">
+                           <font>
+                              <Font name="Verdana" size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
                         <ImageView fx:id="barImage" fitHeight="125.0" fitWidth="170.0" layoutX="37.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true" visible="false">
                            <image>
                               <Image url="@../../../images/ApplicationLogo.png" />

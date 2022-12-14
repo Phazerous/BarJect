@@ -1,0 +1,10 @@
+.button {
+    -fx-background-color: white;
+    -fx-text-fill: gray;
+}
+.button:hover {
+    -fx-text-fill: black;
+}
+.button:pressed {
+    -fx-translate-y: 5px;
+}

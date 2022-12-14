@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+
 public class BarJectApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
@@ -22,4 +23,5 @@ public class BarJectApplication extends Application {
     public static void main(String[] args) {
         launch();
     }
+
 }
